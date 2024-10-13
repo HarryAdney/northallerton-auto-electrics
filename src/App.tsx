@@ -1,17 +1,20 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Car, Battery, Wrench, Clock } from 'lucide-react';
+import headerImage from '../src/assets/img/header.webp';
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-blue-600 text-white py-4">
         <div className="container mx-auto px-4">
+        
           <h1 className="text-3xl font-bold">Northallerton-Auto-Electrics</h1>
           <p className="text-xl">Your Trusted Auto Electrical Specialists</p>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8">
+      <img src={headerImage} alt="Mechanic inspecting car engine" className="w-full h-auto mb-4" />
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

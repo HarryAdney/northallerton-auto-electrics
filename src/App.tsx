@@ -2,6 +2,18 @@ import React from 'react';
 import { Phone, Mail, MapPin, Car, Battery, Wrench, Clock } from 'lucide-react';
 import headerImage from '../src/assets/img/header.webp';
 
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface ContactInfoProps {
+  icon: React.ReactNode;
+  text: React.ReactNode;
+  title: string;
+  description: string;
+}
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -37,24 +49,24 @@ function App() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
           <div className="bg-white shadow-md rounded-lg p-6">
-            <ContactInfo icon={<MapPin />} text="Unit 3, County Business Park, Darlington Road, Northallerton, North Yorkshire, DL6 2NQ" />
-            <ContactInfo icon={<Phone />} text="01609 777628" />
-            <ContactInfo icon={<Mail />} text="autoelectricsdave@gmail.com" />
-            <ContactInfo icon={<Clock />} text="Mon-Fri: 8:30 AM - 5:30 PM, Sat: 9:00 AM - 1:00 PM, Sun: Closed" />
+            <ContactInfo icon={<MapPin />} text="Unit 3, County Business Park, Darlington Road, Northallerton, North Yorkshire, DL6 2NQ" title={''} description={''} />
+            <ContactInfo icon={<Phone />} text="01609 777628" title={''} description={''} />
+            <ContactInfo icon={<Mail />} text="autoelectricsdave@gmail.com" title={'Email address'} description={'email address icon'} />
+            <ContactInfo icon={<Clock />} text="Mon-Fri: 8:30 AM - 5:30 PM, Sat: 9:00 AM - 1:00 PM, Sun: Closed" title={''} description={''} />
           </div>
         </section>
       </main>
 
       <footer className="bg-gray-800 text-white py-4 mt-12">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Northallerton-Auto-Electrics. All rights reserved.</p>
+          <p>&copy; Copyright 2024 Northallerton Auto Electrics. All rights reserved.</p>
         </div>
       </footer>
     </div>
   );
 }
 
-function ServiceCard({ icon, title, description }) {
+function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
     <div className="bg-white shadow-md rounded-lg p-6">
       <div className="flex items-center justify-center mb-4">
@@ -66,7 +78,7 @@ function ServiceCard({ icon, title, description }) {
   );
 }
 
-function ContactInfo({ icon, text }) {
+function ContactInfo({ icon, text }: ContactInfoProps) {
   return (
     <div className="flex items-start mb-4">
       <div className="mr-4 mt-1">{icon}</div>
